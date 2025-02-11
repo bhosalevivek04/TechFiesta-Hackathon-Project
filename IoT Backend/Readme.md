@@ -1,6 +1,6 @@
-# Backend Sensor Data API
+# IoT Backend Sensor Data API
 
-This project is a Node.js backend application that provides an API for managing sensor data. It uses Express for the server framework and MongoDB for data storage.
+This project is a Node.js backend application that provides an API for managing sensor data from IoT devices. It uses Express for the server framework and MongoDB for data storage.
 
 ## Features
 
@@ -18,11 +18,13 @@ This project is a Node.js backend application that provides an API for managing 
 ### General Endpoints
 
 - **POST** `/api/sensor-data`: Save sensor data.
-  - **Payload**: `{ "soilmoisture": Number, "temperature": Number, "humidity": Number }`
+  - **Payload**: `{ "soilmoisture": Number, "temperature": Number, "humidity": Number, "userId": String }`
   
 - **GET** `/api/sensor-data`: Fetch all sensor data.
 
 - **GET** `/api/sensor-data/latest`: Fetch the latest sensor data entry.
+
+- **GET** `/api/sensor-data/user/:mobile`: Get user-specific latest data.
 
 - **POST** `/api/threshold`: Set or update threshold settings.
   - **Payload**: `{ "soilThreshold": Number, "tempThreshold": Number, "humThreshold": Number }`
